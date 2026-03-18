@@ -1,5 +1,3 @@
-using System;
-
 namespace Concierge.Net.Domain.Base;
 
 public abstract class Entity<TId> where TId : Id<TId>

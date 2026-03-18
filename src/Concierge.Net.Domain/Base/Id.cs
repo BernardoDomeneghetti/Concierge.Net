@@ -1,22 +1,10 @@
-using System;
-
 namespace Concierge.Net.Domain.Base;
 
-public class Id<T> where T : Id<T>
+public abstract class Id<T> : ValueObject where T : Id<T>
 {
-    private Id(Guid value)
+    protected Id(Guid value)
     {
         Value = value;
-    }
-
-    public static Id<T> New()
-    {
-        return new Id<T>(Guid.NewGuid());
-    }
-
-    public static Id<T> From(Guid value)
-    {
-        return new Id<T>(value);
     }
 
     public Guid Value { get; private set; }
@@ -26,4 +14,8 @@ public class Id<T> where T : Id<T>
         return Value.ToString();
     }
 
+    protected override IEnumerable<object> GetEqualityComponents()
+    {
+        yield return Value;
+    }
 }
