@@ -1,0 +1,27 @@
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.5.2.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Concierge.Net.Domain", "src\Concierge.Net.Domain\Concierge.Net.Domain.csproj", "{1FA792EC-4C2B-99EF-DA39-B955F701D861}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{1FA792EC-4C2B-99EF-DA39-B955F701D861}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1FA792EC-4C2B-99EF-DA39-B955F701D861}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1FA792EC-4C2B-99EF-DA39-B955F701D861}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1FA792EC-4C2B-99EF-DA39-B955F701D861}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{1FA792EC-4C2B-99EF-DA39-B955F701D861} = {827E0CD3-B72D-47B6-A68D-7590B98EB39B}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {B1008BCE-6894-4890-849D-9DD4759E132E}
+	EndGlobalSection
+EndGlobal
