@@ -1,4 +1,3 @@
-using System;
 using Concierge.Net.Domain.Base;
 using Concierge.Net.Domain.Residents;
 
