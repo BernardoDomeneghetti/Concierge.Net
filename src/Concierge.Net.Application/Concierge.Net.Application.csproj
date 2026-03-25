@@ -13,12 +13,7 @@
   <ItemGroup>
     <Folder Include="Abstractions\Repositories\" />
     <Folder Include="Abstractions\Services\" />
-    <Folder Include="Abstractions\UseCases\" />
     <Folder Include="Context\" />
-    <Folder Include="Decorators\" />
-    <Folder Include="Package\" />
-    <Folder Include="Package\Handlers\" />
-    <Folder Include="Package\Commands\" />
     <Folder Include="Package\Queries\" />
     <Folder Include="Package\Responses\" />
     <Folder Include="Services\" />

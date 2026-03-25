@@ -5,5 +5,5 @@ namespace Concierge.Net.Application.Package.Queries;
 
 public class GetPackageQuery: IQuery
 {
-
+    public Guid PackageId { get; init; }
 }
