@@ -4,7 +4,7 @@ using Concierge.Net.Domain.Shared;
 
 namespace Concierge.Net.Domain.Packages;
 
-public sealed class Package : AggregateRoot<PackageId>
+public sealed class Package: AggregateRoot<PackageId>
 {
     public ResidentId ResidentId { get; private set; }
     public UnitId UnitId { get; private set; }
