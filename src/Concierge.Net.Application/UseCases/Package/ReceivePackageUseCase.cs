@@ -1,12 +1,13 @@
 using Concierge.Net.Application.Abstractions.Messaging;
 using Concierge.Net.Application.Abstractions.Repositories;
+using Concierge.Net.Application.Abstractions.UseCases;
 using Concierge.Net.Domain.Packages;
 using Concierge.Net.Domain.Residents;
 using Concierge.Net.Domain.Shared;
 
 namespace Concierge.Net.Application.UseCases.Package;
 
-public class ReceivePackageUseCase
+public class ReceivePackageUseCase: IReceveivePackageUseCase
 {
     private readonly IPackageRepository _repository;
     private readonly IDomainEventDispatcher _dispatcher;
