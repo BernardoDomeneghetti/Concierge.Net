@@ -1,4 +1,5 @@
 <Solution>
   <Project Path="Concierge.Net.Application/Concierge.Net.Application.csproj" />
   <Project Path="Concierge.Net.Domain/Concierge.Net.Domain.csproj" />
+  <Project Path="Concierge.Net.Infraestructure/Concierge.Net.Infraestructure.csproj" />
 </Solution>
