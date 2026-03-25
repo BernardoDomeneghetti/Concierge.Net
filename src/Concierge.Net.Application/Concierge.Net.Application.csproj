@@ -11,8 +11,10 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Folder Include="Abstractions\Services\" />
     <Folder Include="Package\" />
     <Folder Include="Package\Handlers\" />
+    <Folder Include="Services\" />
   </ItemGroup>
 
 </Project>
