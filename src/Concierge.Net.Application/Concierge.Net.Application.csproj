@@ -14,8 +14,6 @@
     <Folder Include="Abstractions\Repositories\" />
     <Folder Include="Abstractions\Services\" />
     <Folder Include="Context\" />
-    <Folder Include="Package\Queries\" />
-    <Folder Include="Package\Responses\" />
     <Folder Include="Services\" />
   </ItemGroup>
 
