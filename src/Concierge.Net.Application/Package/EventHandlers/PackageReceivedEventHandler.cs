@@ -4,11 +4,11 @@ using Concierge.Net.Domain.Packages;
 
 namespace Concierge.Net.Application.Package.Handlers;
 
-public class PackageReceivedHandler: IDomainEventHandler<PackageReceivedDomainEvent>
+public class PackageReceivedEventHandler: IDomainEventHandler<PackageReceivedDomainEvent>
 {
     private readonly IEmailService _emailService;
 
-    public PackageReceivedHandler(IEmailService emailService)
+    public PackageReceivedEventHandler(IEmailService emailService)
     {
         _emailService = emailService;
     }

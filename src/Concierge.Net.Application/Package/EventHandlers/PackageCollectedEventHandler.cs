@@ -4,7 +4,7 @@ using Concierge.Net.Domain.Packages;
 
 namespace Concierge.Net.Application.Package.Handlers;
 
-public class PackageCollectedHandler(IEmailService emailService) : IDomainEventHandler<PackageCollectedDomainEvent>
+public class PackageCollectedEventHandler(IEmailService emailService) : IDomainEventHandler<PackageCollectedDomainEvent>
 {
     private readonly IEmailService _emailService = emailService;
 

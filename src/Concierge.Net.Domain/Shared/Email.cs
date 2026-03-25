@@ -15,5 +15,7 @@ public sealed class Email(string value) : ValueObject
         yield return Value;
     }
 
+    public static Email From(string value) => new(value);
+
     public override string ToString() => Value;
 }
