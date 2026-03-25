@@ -1,12 +1,13 @@
 using System;
 using Concierge.Net.Application.Abstractions.Services;
+using Concierge.Net.Domain.Shared;
 
 namespace Concierge.Net.Application.Services;
 
 public sealed class FakeEmailService : IEmailService
 {
     public Task SendAsync(
-        string to,
+        Email to,
         string subject,
         string body,
         CancellationToken cancellationToken = default)

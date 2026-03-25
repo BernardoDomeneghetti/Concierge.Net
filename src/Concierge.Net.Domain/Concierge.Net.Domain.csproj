@@ -9,6 +9,7 @@
   <ItemGroup>
     <Folder Include="Package\" />
     <Folder Include="Resident\" />
+    <Folder Include="Shared\" />
   </ItemGroup>
 
 </Project>

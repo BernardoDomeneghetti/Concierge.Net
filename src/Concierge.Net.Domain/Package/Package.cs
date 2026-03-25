@@ -1,5 +1,6 @@
 using Concierge.Net.Domain.Base;
 using Concierge.Net.Domain.Residents;
+using Concierge.Net.Domain.Shared;
 
 namespace Concierge.Net.Domain.Packages;
 
@@ -25,6 +26,7 @@ public sealed class Package : AggregateRoot<PackageId>
 
     public static Package Receive(
         ResidentId residentId,
+        Email notificationEmail,
         UnitId unitId)
     {
         var package = new Package(
@@ -33,18 +35,18 @@ public sealed class Package : AggregateRoot<PackageId>
             unitId);
 
         package.AddDomainEvent(
-            new PackageReceivedDomainEvent(package.Id));
+            new PackageReceivedDomainEvent(package.Id, residentId, notificationEmail, unitId));
 
         return package;
     }
 
-    public void MarkAsCollected()
+    public void MarkAsCollected(ResidentId collectedBy, string signatureHash, DateTime collectedAtUtc, Email notificationEmail)
     {
         if (IsCollected)
             throw new InvalidOperationException("Package already collected.");
 
         CollectedAtUtc = DateTime.UtcNow;
 
-        AddDomainEvent( new PackageCollectedDomainEvent(Id));
+        AddDomainEvent( new PackageCollectedDomainEvent(Id, collectedBy, UnitId, signatureHash, collectedAtUtc, notificationEmail));
     }
 }
