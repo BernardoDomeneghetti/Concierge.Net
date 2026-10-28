@@ -2,7 +2,7 @@ using Concierge.Net.Application.Abstractions.Messaging;
 using Concierge.Net.Application.Abstractions.Services;
 using Concierge.Net.Domain.Packages;
 
-namespace Concierge.Net.Application.Package.Handlers;
+namespace Concierge.Net.Application.Packages.Handlers;
 
 public class PackageCollectedEventHandler(IEmailService emailService) : IDomainEventHandler<PackageCollectedDomainEvent>
 {

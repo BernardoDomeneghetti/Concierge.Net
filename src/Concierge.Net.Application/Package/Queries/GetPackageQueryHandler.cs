@@ -1,7 +1,7 @@
 using System;
 using Concierge.Net.Application.Abstractions.UseCases;
 
-namespace Concierge.Net.Application.Package.Queries;
+namespace Concierge.Net.Application.Packages.Queries;
 
 public class GetPackageQueryHandler: IQueryHandler<GetPackageQuery, GetPackageResponse>
 {
