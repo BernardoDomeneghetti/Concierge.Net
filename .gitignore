@@ -411,3 +411,6 @@ FodyWeavers.xsd
 *.msix
 *.msm
 *.msp
+
+# Agent context
+agy/
