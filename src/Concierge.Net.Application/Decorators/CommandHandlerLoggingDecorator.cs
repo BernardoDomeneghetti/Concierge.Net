@@ -1,4 +1,3 @@
-using System;
 using Concierge.Net.Application.Abstractions.Context;
 using Concierge.Net.Application.Abstractions.Messaging;
 using Concierge.Net.Application.Abstractions.UseCases;
@@ -35,13 +34,21 @@ public sealed class CommandHandlerLoggingDecorator<TCommand, TResponse>
             ["Request"] = typeof(TCommand).Name
         }))
         {
-            _logger.LogInformation("Command started");
+            try
+            {
+                _logger.LogInformation("Command started");
 
-            var result = await _inner.ExecuteAsync(command, cancellationToken);
+                var result = await _inner.ExecuteAsync(command, cancellationToken);
 
-            _logger.LogInformation("Command completed");
+                _logger.LogInformation("Command completed");
 
-            return result;
+                return result;
+            }
+            catch (Exception ex)
+            {
+                _logger.LogError(ex, "Error executing command");
+                throw;
+            }
         }
     }
 }
