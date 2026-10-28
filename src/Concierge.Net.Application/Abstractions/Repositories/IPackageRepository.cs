@@ -1,8 +1,8 @@
-using System;
+using Concierge.Net.Domain.Packages;
 
 namespace Concierge.Net.Application.Abstractions.Repositories;
 
 public interface IPackageRepository
 {
-    Task SaveAsync(Domain.Packages.Package package, CancellationToken ct);
+    void Add(Package package);
 }

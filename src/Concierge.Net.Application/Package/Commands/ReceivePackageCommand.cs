@@ -1,7 +1,7 @@
 using System;
 using Concierge.Net.Application.Abstractions.Messaging;
 
-namespace Concierge.Net.Application.Package.Commands;
+namespace Concierge.Net.Application.Packages.Commands;
 
 public class ReceivePackageCommand: ICommand
 {

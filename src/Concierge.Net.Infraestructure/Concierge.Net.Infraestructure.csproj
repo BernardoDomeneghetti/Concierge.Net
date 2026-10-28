@@ -15,4 +15,8 @@
     <ProjectReference Include="..\Concierge.Net.Application\Concierge.Net.Application.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <PackageReference Include="MongoDB.Driver" Version="3.13.0" />
+  </ItemGroup>
+
 </Project>

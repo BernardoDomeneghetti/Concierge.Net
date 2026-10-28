@@ -1,39 +1,31 @@
-using Concierge.Net.Application.Abstractions.Messaging;
 using Concierge.Net.Application.Abstractions.Repositories;
 using Concierge.Net.Application.Abstractions.UseCases;
 using Concierge.Net.Domain.Packages;
 using Concierge.Net.Domain.Residents;
 using Concierge.Net.Domain.Shared;
 
-namespace Concierge.Net.Application.Package.Commands;
+namespace Concierge.Net.Application.Packages.Commands;
 
-public class ReceivePackageCommandHandler: ICommandHandler<ReceivePackageCommand, PackageId>
+public class ReceivePackageCommandHandler(
+    IPackageRepository repository,
+    IUnitOfWork unitOfWork) : ICommandHandler<ReceivePackageCommand, PackageId>
 {
-    private readonly IPackageRepository _repository;
-    private readonly IDomainEventDispatcher _dispatcher;
-
-    public ReceivePackageCommandHandler(IPackageRepository repository, IDomainEventDispatcher dispatcher)
-    {
-        _repository = repository;
-        _dispatcher = dispatcher;
-    }
+    private readonly IPackageRepository _repository = repository;
+    private readonly IUnitOfWork _unitOfWork = unitOfWork;
 
     public async Task<PackageId> ExecuteAsync(
         ReceivePackageCommand command,  
         CancellationToken correlationToken)
     {
-            
-        var package = Domain.Packages.Package.Receive(//TODO: Remove fully qualified name once Package is being imported 
+        var package = Package.Receive(
             ResidentId.From(command.ResidentId),
             Email.From(command.Email),
             UnitId.From(command.UnitId)
         ); 
 
-        await _repository.SaveAsync(package, correlationToken);
+        _repository.Add(package);
 
-        await _dispatcher.DispatchAsync(package.DomainEvents, correlationToken);
-
-        package.ClearDomainEvents();
+        await _unitOfWork.CommitAsync(correlationToken);
 
         return package.Id;
     }
