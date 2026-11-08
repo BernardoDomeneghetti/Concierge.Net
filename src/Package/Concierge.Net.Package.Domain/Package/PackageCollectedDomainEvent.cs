@@ -1,0 +1,21 @@
+using Concierge.Net.Package.Domain.Base;
+using Concierge.Net.Package.Domain.Residents;
+using Concierge.Net.Package.Domain.Shared;
+
+namespace Concierge.Net.Package.Domain.Packages;
+
+public class PackageCollectedDomainEvent(
+    PackageId packageId,
+    ResidentId collectedByResidentId,
+    UnitId unitId,
+    string signatureHash,
+    DateTime collectedAtUtc,
+    Email notificationEmail) : DomainEvent
+{
+    public PackageId PackageId { get; } = packageId;
+    public ResidentId CollectedByResidentId { get; } = collectedByResidentId;
+    public Email NotificationEmail { get; set; } = notificationEmail;
+    public UnitId UnitId { get; } = unitId;
+    public string SignatureHash { get; } = signatureHash;
+    public DateTime CollectedAtUtc { get; } = collectedAtUtc;
+}
