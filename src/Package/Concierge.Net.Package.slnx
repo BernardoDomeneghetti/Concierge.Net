@@ -1,0 +1,15 @@
+<Solution>
+  <Folder Name="/Domain/">
+    <Project Path="Concierge.Net.Package.Domain/Concierge.Net.Package.Domain.csproj" />
+  </Folder>
+  <Folder Name="/Api/">
+    <Project Path="Concierge.Net.Package.Api/Concierge.Net.Package.Api/Concierge.Net.Package.Api.csproj" />
+    <Project Path="Concierge.Net.Package.Api/Concierge.Net.Package.Api.Application/Concierge.Net.Package.Api.Application.csproj" />
+    <Project Path="Concierge.Net.Package.Api/Concierge.Net.Package.Api.Infraestructure/Concierge.Net.Package.Api.Infraestructure.csproj" />
+  </Folder>
+  <Folder Name="/Worker/">
+    <Project Path="Concierge.Net.Package.Worker/Concierge.Net.Package.Worker/Concierge.Net.Package.Worker.csproj" />
+    <Project Path="Concierge.Net.Package.Worker/Concierge.Net.Package.Worker.Application/Concierge.Net.Package.Worker.Application.csproj" />
+    <Project Path="Concierge.Net.Package.Worker/Concierge.Net.Package.Worker.Infraestructure/Concierge.Net.Package.Worker.Infraestructure.csproj" />
+  </Folder>
+</Solution>
